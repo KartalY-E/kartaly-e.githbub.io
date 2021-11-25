@@ -1,0 +1,190 @@
+body{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.external-link{
+    color: #2c3fef;
+}
+/* NAV */
+nav{
+    display: flex;
+    justify-content: space-between;
+    margin: 3rem;
+}
+nav .logo{
+    font-weight: 700;
+}
+
+nav .links a{
+    font-weight: 500;
+}
+nav .links a:first-child{
+    margin-right: 20px;
+}
+
+nav > .icons > a > svg{
+    height: 20px;
+    width: 20px;
+    vertical-align: middle;
+}
+nav > .icons > a:last-child > svg{
+    margin-bottom: 2px;
+}
+nav .icons a:first-child{
+    margin-right: 20px;
+}
+
+/* MAIN */
+main{
+    margin: auto;
+    width: 70%;
+}
+.basics{
+    display: flex;
+    flex-direction: row;
+    margin-top: 2rem;
+}
+
+.basics div{
+    padding: 1rem;
+    max-width: 500px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.button-link{
+    background-color: #000009;
+    padding: 0.9rem 2rem;
+    border: none;
+    border-radius: 5px;
+    margin: 5px 10px 10px 0px;
+}
+
+
+.button-link a{
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+.basics > img{
+    height: 400px;
+    width: auto;
+    max-width: 300px;
+    margin: auto;
+}
+
+/* WORK */
+.work{
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+    /* margin: auto; */
+    margin-left: auto;
+    margin-right: auto;
+}
+/* WORK */
+.work-title{
+    margin-bottom: 5rem;
+}
+
+h2{
+    text-align: center;
+}
+.projects{ 
+    display: flex;
+    flex-direction: row;
+}
+
+.project{
+    margin: 1rem;
+    width: 300px;
+    height: auto;
+    border-radius: 5px;
+    min-height: 480px;
+    position: relative;
+    background-color: #f3f3f3;
+}
+.project > button{
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+}
+
+.project > img{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    height: 250px;
+    background-color: #f3f3f3;
+    width: 300px;
+    object-fit: contain;
+    object-fit:cover;
+    object-position: top center;
+}
+.project-content{
+    margin: 5px 15px 10px 15px;
+
+}
+.project-title{
+    font-weight: 500;
+    font-size: large;
+    padding: 5px 5px 5px 0px;
+}
+
+.project-text > strong{
+    font-size: large;
+}
+
+
+/* CONTACT */
+.contact{
+    margin: 5rem 0rem 10rem 0rem;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+.contact-title{
+    font-weight: 900;
+    font-size: 80px;
+    width: 50%;
+}
+
+.contact-content{
+    text-align: left;
+}
+.contact-content > div{
+    padding: 15px;
+    vertical-align: middle;
+}
+.contact-content > div > a{
+    font-size: 20px;
+    margin-left: 20px;
+    display: flex;
+}
+
+.contact-content > div > a > div{
+    /* margin-bottom: 15px; */
+}
+.contact-content > div > a > svg{
+    height: 24px;
+    width: auto;
+    margin-right: 20px;
+}
+
+
+
+
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 800px) {
+    .basics,.contact{
+      flex-direction: column;
+    }
+  }
+@media (max-width: 700px) {
+    .projects{
+      flex-direction: column;
+    }
+  }
