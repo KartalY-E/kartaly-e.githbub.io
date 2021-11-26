@@ -1,62 +1,129 @@
-body{
+body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
 }
-a{
+
+svg:hover {
+    fill: #2c3fef;
+}
+
+a {
     text-decoration: none;
     color: black;
 }
-.external-link{
+
+a:hover {
+
     color: #2c3fef;
 }
+
+.color-1 {
+    color: #2c3fef;
+}
+
+.external-link {
+    color: #2c3fef;
+}
+
+.external-link-2 {
+    color: black;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.external-link-2:hover {
+    color: #2c3fef;
+}
+/* ANIMATION */ 
+
+
+
+.fade-in{
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 2s; /* Firefox < 16 */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+         -o-animation: fadein 2s; /* Opera < 12.1 */
+            animation: fadein 2s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+
 /* NAV */
-nav{
+nav {
     display: flex;
     justify-content: space-between;
     margin: 3rem;
 }
-nav .logo{
+
+nav .logo {
     font-weight: 700;
 }
 
-nav .links a{
+nav .links a {
     font-weight: 500;
 }
-nav .links a:first-child{
+
+nav .links a:first-child {
     margin-right: 20px;
 }
 
-nav > .icons > a > svg{
+nav>.icons>a>svg {
     height: 20px;
     width: 20px;
     vertical-align: middle;
 }
-nav > .icons > a:last-child > svg{
+
+nav>.icons>a:lnth-child(2)>svg {
     margin-bottom: 2px;
 }
-nav .icons a:first-child{
+
+nav .icons a:first-child,
+nav .icons a:nth-child(2) {
     margin-right: 20px;
 }
 
 /* MAIN */
-main{
+main {
     margin: auto;
     width: 70%;
 }
-.basics{
+
+.basics {
     display: flex;
     flex-direction: row;
     margin-top: 2rem;
 }
 
-.basics div{
+.basics div {
     padding: 1rem;
     max-width: 500px;
     margin-top: auto;
     margin-bottom: auto;
 }
 
-.button-link{
+.button-link {
     background-color: #000009;
     padding: 0.9rem 2rem;
     border: none;
@@ -64,13 +131,17 @@ main{
     margin: 5px 10px 10px 0px;
 }
 
+.button-link:hover {
+    background-color: #2c3fef;
+}
 
-.button-link a{
-    font-weight: bold;
+
+.button-link a {
+    font-weight: bolder;
     color: whitesmoke;
 }
 
-.basics > img{
+.basics>img {
     height: 400px;
     width: auto;
     max-width: 300px;
@@ -78,27 +149,32 @@ main{
 }
 
 /* WORK */
-.work{
+.work {
     margin-top: 10rem;
     margin-bottom: 10rem;
     /* margin: auto; */
     margin-left: auto;
     margin-right: auto;
 }
+
 /* WORK */
-.work-title{
+.work-title {
     margin-bottom: 5rem;
 }
 
-h2{
+h2 {
     text-align: center;
 }
-.projects{ 
+
+.projects {
     display: flex;
+    align-content: flex-start;
+    width: 100%;
+    justify-content: space-between;
     flex-direction: row;
 }
 
-.project{
+.project {
     margin: 1rem;
     width: 300px;
     height: auto;
@@ -106,69 +182,76 @@ h2{
     min-height: 480px;
     position: relative;
     background-color: #f3f3f3;
+    border: 1px solid #f3f3f3;
 }
-.project > button{
+
+.project>button {
     position: absolute;
     bottom: 10px;
     left: 15px;
 }
 
-.project > img{
+.project>img {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     height: 250px;
     background-color: #f3f3f3;
     width: 300px;
     object-fit: contain;
-    object-fit:cover;
+    object-fit: cover;
     object-position: top center;
 }
-.project-content{
+
+.project-content {
     margin: 5px 15px 10px 15px;
 
 }
-.project-title{
+
+.project-title {
     font-weight: 500;
     font-size: large;
     padding: 5px 5px 5px 0px;
 }
 
-.project-text > strong{
+.project-text>strong {
     font-size: large;
 }
 
 
 /* CONTACT */
-.contact{
+.contact {
     margin: 5rem 0rem 10rem 0rem;
     display: flex;
     flex-direction: row;
     text-align: center;
 }
 
-.contact-title{
+.contact-title {
     font-weight: 900;
     font-size: 80px;
     width: 50%;
 }
 
-.contact-content{
+.contact-content {
     text-align: left;
 }
-.contact-content > div{
+
+.contact-content>div {
     padding: 15px;
     vertical-align: middle;
 }
-.contact-content > div > a{
+
+.contact-content>div>a {
     font-size: 20px;
     margin-left: 20px;
     display: flex;
 }
 
-.contact-content > div > a > div{
+.contact-content>div>a>div {
     /* margin-bottom: 15px; */
 }
-.contact-content > div > a > svg{
+
+.contact-content>div>a>svg {
     height: 24px;
     width: auto;
     margin-right: 20px;
@@ -179,12 +262,15 @@ h2{
 
 /* Responsive layout - makes a one column layout instead of a two-column layout */
 @media (max-width: 800px) {
-    .basics,.contact{
-      flex-direction: column;
+
+    .basics,
+    .contact {
+        flex-direction: column;
     }
-  }
-@media (max-width: 700px) {
-    .projects{
-      flex-direction: column;
+}
+
+@media (max-width: 1000px) {
+    .projects {
+        flex-direction: column;
     }
-  }
+}
