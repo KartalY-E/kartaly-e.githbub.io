@@ -162,9 +162,9 @@ main {
     color: #f5f5f5
 }
 
-.basics>img {
+.basics>amp-img {
     height: 400px;
-    width: auto;
+    width: 270px;
     max-width: 300px;
     margin: auto
 }
@@ -215,7 +215,7 @@ h2 {
     left: 15px
 }
 
-.project>img {
+.project>amp-img {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     height: 250px;
@@ -275,8 +275,6 @@ h2 {
 }
 
 @media (max-width: 800px) {
-
-    .basics,
     .contact {
         flex-direction: column
     }
@@ -306,6 +304,9 @@ h2 {
 }
 
 @media (max-width: 1000px) {
+    .basics {
+        flex-direction: column
+    }
     .projects {
         flex-flow: row wrap;
         justify-content: center
