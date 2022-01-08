@@ -2,8 +2,6 @@
 <html lang="en">
 
 <head>
-
-    <!-- META  -->
     <!-- Primary Meta Tags -->
     <title>Portfolio, Kartal Yunus EMRE, I'm a Full Stack Developer.</title>
     <meta name="title" content="Portfolio, Kartal Yunus EMRE, I'm A Full Stack Developer.">
@@ -35,9 +33,18 @@
     <link rel="icon" href="/src/images/tabicon.svg">
 
     <style amp-custom>
+        html {
+            scroll-behavior: smooth
+        }
+
+        ::selection {
+            color: #fff;
+            background: #2c3fef
+        }
+
         body {
             margin: 0;
-            font-family: Roboto, sans-serif;
+            font-family: 'Roboto', sans-serif;
             border-bottom: 5px solid #2c3fef
         }
 
@@ -142,7 +149,7 @@
         }
 
         nav .links a {
-            font-weight: 500
+            font-weight: 700
         }
 
         nav .links a:first-child {
@@ -164,12 +171,36 @@
             margin-right: 20px
         }
 
+        #btnScrollToTop {
+            text-align: center;
+            font-size: x-large;
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            background-color: #2c3fef;
+            border: none;
+            border-radius: 1rem;
+            width: 70px;
+            height: 70px;
+            color: #fff;
+            font-weight: 900;
+            opacity: 0
+        }
+
+        #btnScrollToTop.btn-active {
+            animation-duration: 2s;
+            animation-name: fadein;
+            opacity: 1
+        }
+
         .basics {
-            width: 70%;
+            width: auto;
             margin: auto;
             display: flex;
             flex-direction: row;
-            margin-top: 2rem
+            margin-top: 2rem;
+            max-width: 1000px;
+            height: 50vh
         }
 
         .basics div {
@@ -204,11 +235,14 @@
             margin: auto
         }
 
+        .certification {
+            display: flex;
+            justify-content: center;
+            height: 50vh
+        }
+
         .work {
-            margin-top: 10rem;
-            margin-bottom: 10rem;
-            margin-left: auto;
-            margin-right: auto
+            margin: auto
         }
 
         .work-title {
@@ -235,7 +269,8 @@
             position: relative;
             background-color: #f3f3f3;
             border: 1px solid #f3f3f3;
-            border-radius: 5px;
+            border-bottom: 2px solid #2c3fef;
+            border-radius: 5px 5px 0 0;
             display: flex
         }
 
@@ -251,7 +286,7 @@
         }
 
         .project-content {
-            margin: 5px 15px 10px 15px;
+            margin: 5px 15px 10px;
             width: 50%;
             position: relative
         }
@@ -279,21 +314,24 @@
         }
 
         .contact {
-            margin: 5rem 0 10rem 0;
+            margin: 5rem 0 10rem;
             display: flex;
             flex-direction: row;
+            justify-content: center;
             text-align: center;
             height: 50vh;
             align-items: center
         }
 
         .contact-title {
+            text-align: right;
             font-weight: 900;
             font-size: 80px;
             width: 50%
         }
 
         .contact-content {
+            width: 50%;
             text-align: left
         }
 
@@ -314,7 +352,24 @@
             margin-right: 20px
         }
 
-        @media (max-width:750px) {
+        @media (max-width: 600px) {
+            .project-content {
+                margin: 0
+            }
+        }
+
+        @media (max-width: 750px) {
+            .basics {
+                flex-direction: column;
+                margin: 2rem;
+                height: auto
+            }
+
+            .basics div {
+                margin-top: 2rem;
+                margin-bottom: 2rem
+            }
+
             .project {
                 display: block;
                 height: auto;
@@ -336,20 +391,20 @@
             }
         }
 
-        @media (max-width:800px) {
-
-            .basics,
+        @media (max-width: 800px) {
             .contact {
                 flex-direction: column
             }
 
             .contact-title {
                 font-size: 50px;
+                text-align: center;
                 width: 100%
             }
 
             .contact-content {
-                margin-top: 2rem
+                margin-top: 2rem;
+                width: 100%
             }
 
             .contact-content>div {
@@ -367,11 +422,7 @@
             }
         }
 
-        @media (max-width:1000px) {
-            .basics {
-                flex-direction: column
-            }
-
+        @media (max-width: 1000px) {
             .projects {
                 flex-flow: row wrap;
                 justify-content: center
@@ -388,8 +439,8 @@
             <a href="/" title="Kartal Yunus Emre says Welcome">KY<span class="color-1">E</span></a>
         </div>
         <div class="links">
-            <a href="#work" role="link">Work</a>
-            <a href="#contact" role="link">Contact</a>
+            <a href="#work" role="link">WORK</a>
+            <a href="#contact" role="link">CONTACT</a>
         </div>
         <div class="icons">
             <a href="https://github.com/KartalY-E" title="Github" role="link">
@@ -413,7 +464,7 @@
         </div>
     </nav>
     <main class="fade-in">
-        <div class="basics">
+        <section class="basics">
             <div>
                 <h1>
                     Hi,I'm Kartal Yunus <span class="color-2">EMRE</span>,<br>I'm a <span class="color-3">Full Stack
@@ -423,22 +474,29 @@
                     During my bachelor <a href="https://www.kdg.be/multimedia-creative-technologies"><strong>Multimedia
                             & Communication technology</strong></a> I learned Front & Backend development,with a touch
                     of UX & UI.
-                    Right now I'm studing to get my AWS Cloud Practitioner certification.
+                    Right now I'm studing to get my AWS Certified Solutions Architect - Associate.
                 </p>
-                <a href="#contact">
-                    <button class="button-link">
-                        CONTACT MY
-                    </button>
-                </a>
                 <a href="#work">
                     <button class="button-link">
                         MY WORK
                     </button>
                 </a>
+                <a href="#contact">
+                    <button class="button-link">
+                        CONTACT MY
+                    </button>
+                </a>
             </div>
             <amp-img src="/src/images/profile.svg" alt="Profile image" width="450" height="350"></amp-img>
-        </div>
-        <div class="work" id="work">
+
+        </section>
+        <section class="certification">
+            <div data-iframe-width="270" data-iframe-height="270"
+                data-share-badge-id="867003e3-f31b-4dbe-8447-2531f3245398"
+                data-share-badge-host="https://www.credly.com"></div>
+            <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+        </section>
+        <section class="work" id="work">
             <h2 class="work-title">
                 MY WORK
             </h2>
@@ -536,7 +594,7 @@
                     <img src="/src/images/react-movies-home.png" alt="React movie & series app">
                 </div>
             </div>
-        </div>
+        </section>
         <section class="contact" id="contact">
             <div class="contact-title">
                 CONTACT<br>
@@ -573,6 +631,27 @@
             </div>
         </section>
     </main>
+
+    <button id="btnScrollToTop">UP</button>
+    <script>
+        const btnScrollToTop = document.querySelector('#btnScrollToTop');
+
+        window.addEventListener("scroll", () => {
+            if (window.pageYOffset > 100) {
+                btnScrollToTop.classList.add("btn-active");
+            } else {
+                btnScrollToTop.classList.remove("btn-active");
+            }
+        })
+
+        btnScrollToTop.addEventListener('click', function () {
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: "smooth"
+            })
+        });
+    </script>
 </body>
 
 </html>
