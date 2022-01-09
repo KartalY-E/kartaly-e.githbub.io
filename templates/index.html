@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Primary Meta Tags -->
+    <title>Portfolio, Kartal Yunus EMRE, I'm a Full Stack Developer.</title>
+    <meta name="title" content="Portfolio, Kartal Yunus EMRE, I'm A Full Stack Developer.">
+    <meta name="description"
+        content="During my bachelor Multimedia & Communication technology I learned Front & Backend development,with a touch of UX & UI. Right now I'm studing to get my AWS Cloud Practitioner certification.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kartaly-e.github.io/">
+    <meta property="og:title" content="Portfolio, Kartal Yunus EMRE, I'm A Full Stack Developer.">
+    <meta property="og:description"
+        content="During my bachelor Multimedia & Communication technology I learned Front & Backend development,with a touch of UX & UI. Right now I'm studing to get my AWS Cloud Practitioner certification.">
+    <meta property="og:image" content="{{ url_for('static', filename='images/profile.jpg') }}">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://kartaly-e.github.io/">
+    <meta property="twitter:title" content="Portfolio, Kartal Yunus EMRE, I'm A Full Stack Developer.">
+    <meta property="twitter:description"
+        content="During my bachelor Multimedia & Communication technology I learned Front & Backend development,with a touch of UX & UI. Right now I'm studing to get my AWS Cloud Practitioner certification.">
+    <meta property="twitter:image" content="{{ url_for('static', filename='images/profile.jpg') }}">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- google-site-verification -->
+    <meta name="google-site-verification" content="B7JyxRWKbhDPBE0B0xfXKTbESmgmqapTzUEtp0-qwrY" />
+
+    <link rel="icon" href="{{ url_for('static', filename='images/tabicon.svg') }}">
+
+    <style amp-custom>
+        html {
+            scroll-behavior: smooth
+        }
+
+        ::selection {
+            color: white;
+            background: #2c3fef
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            border-bottom: 5px solid #2c3fef;
+            min-height: calc(100vh - 5px)
+        }
+
+        svg:hover {
+            fill: #2c3fef
+        }
+
+        a {
+            text-decoration: none;
+            color: black
+        }
+
+        a:hover {
+            color: #2c3fef
+        }
+
+        .color-1 {
+            color: #2c3fef
+        }
+
+        .color-2 {
+            background-color: #2c3fef;
+            color: whitesmoke;
+            padding: 0 5px
+        }
+
+        .color-3 {
+            text-decoration: underline;
+            text-decoration-color: #2c3fef
+        }
+
+        .external-link {
+            color: #2c3fef
+        }
+
+        .external-link-2 {
+            color: black;
+            text-decoration: underline;
+            font-weight: bold
+        }
+
+        .external-link-2:hover {
+            color: #2c3fef
+        }
+
+        .fade-in {
+            -webkit-animation: fadein 2s;
+            -moz-animation: fadein 2s;
+            -ms-animation: fadein 2s;
+            -o-animation: fadein 2s;
+            animation: fadein 2s
+        }
+
+        @keyframes fadein {
+            from {
+                opacity: 0
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @-moz-keyframes fadein {
+            from {
+                opacity: 0
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @-webkit-keyframes fadein {
+            from {
+                opacity: 0
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @-ms-keyframes fadein {
+            from {
+                opacity: 0
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            margin: 3rem
+        }
+
+        nav .logo {
+            font-weight: 900
+        }
+
+        nav .links a {
+            font-weight: 700
+        }
+
+        nav .links a:first-child {
+            margin-right: 20px
+        }
+
+        nav>.icons>a>svg {
+            height: 20px;
+            width: 20px;
+            vertical-align: middle
+        }
+
+        nav>.icons>a:lnth-child(2)>svg {
+            margin-bottom: 2px
+        }
+
+        nav .icons a:first-child,
+        nav .icons a:nth-child(2) {
+            margin-right: 20px
+        }
+
+        #btnScrollToTop {
+            text-align: center;
+            font-size: x-large;
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            background-color: #2c3fef;
+            border: 0;
+            border-radius: 1rem;
+            width: 70px;
+            height: 70px;
+            color: white;
+            font-weight: 900;
+            opacity: 0
+        }
+
+        #btnScrollToTop.btn-active {
+            animation-duration: 2s;
+            animation-name: fadein;
+            opacity: 1
+        }
+
+        .basics {
+            width: auto;
+            margin: auto;
+            display: flex;
+            flex-direction: row;
+            margin-top: 2rem;
+            max-width: 1000px;
+            height: 50vh
+        }
+
+        .basics div {
+            padding: 1rem;
+            max-width: 500px;
+            margin-top: auto;
+            margin-bottom: auto
+        }
+
+        .button-link {
+            background-color: #000009;
+            padding: .9rem 2rem;
+            border: 0;
+            border-radius: 5px;
+            margin: 5px 10px 10px 0
+        }
+
+        .button-link:hover {
+            background-color: #2c3fef;
+            cursor: pointer
+        }
+
+        .button-link {
+            font-weight: bolder;
+            color: whitesmoke
+        }
+
+        .basics>amp-img {
+            height: 400px;
+            width: 270px;
+            max-width: 300px;
+            margin: auto
+        }
+
+        .certification {
+            display: flex;
+            justify-content: center;
+            height: 50vh
+        }
+
+        .work {
+            margin-top: 10rem;
+            margin-bottom: 10rem;
+            margin: auto
+        }
+
+        .work-title {
+            margin-bottom: 5rem
+        }
+
+        h2 {
+            text-align: center
+        }
+
+        .projects {
+            width: 100%
+        }
+
+        .project {
+            margin: 2rem;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 1rem;
+            height: auto;
+            max-height: 350px;
+            min-height: 320px;
+            max-width: 1000px;
+            position: relative;
+            background-color: #f3f3f3;
+            border: 1px solid #f3f3f3;
+            border-bottom: 2px solid #2c3fef;
+            border-radius: 5px 5px 0 0;
+            display: flex
+        }
+
+        .project>img {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            background-color: #f3f3f3;
+            width: 50%;
+            height: auto;
+            object-fit: contain;
+            object-fit: fit;
+            object-position: top center
+        }
+
+        .project-content {
+            margin: 5px 15px 10px 15px;
+            width: 50%;
+            position: relative
+        }
+
+        .project-icons img {
+            max-height: 2rem;
+            width: auto;
+            margin-right: .5rem
+        }
+
+        .project-content button {
+            position: absolute;
+            bottom: 10px;
+            left: 0
+        }
+
+        .project-title {
+            font-weight: bold;
+            font-size: large;
+            padding: 5px 5px 5px 0
+        }
+
+        .project-text>strong {
+            font-size: large
+        }
+
+        .contact {
+            margin: 5rem 0rem 10rem 0rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            text-align: center;
+            height: 50vh;
+            align-items: center
+        }
+
+        .contact-title {
+            text-align: right;
+            font-weight: 900;
+            font-size: 80px;
+            width: 50%
+        }
+
+        .contact-content {
+            width: 50%;
+            text-align: left
+        }
+
+        .contact-content>div {
+            padding: 15px;
+            vertical-align: middle
+        }
+
+        .contact-content>div>a {
+            font-size: 20px;
+            margin-left: 20px;
+            display: flex
+        }
+
+        .contact-content>div>a>svg {
+            height: 24px;
+            width: 24px;
+            margin-right: 20px
+        }
+
+        #error {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center
+        }
+
+        @media(max-width:600px) {
+            .project-content {
+                margin: 0
+            }
+        }
+
+        @media(max-width:750px) {
+            .basics {
+                flex-direction: column;
+                margin: 2rem;
+                height: auto
+            }
+
+            .basics div {
+                margin-top: 2rem;
+                margin-bottom: 2rem
+            }
+
+            .project {
+                display: block;
+                height: auto;
+                max-height: none;
+                margin: 0 auto;
+                margin-top: 2rem
+            }
+
+            .project-content {
+                width: 100%
+            }
+
+            .project>img {
+                width: 100%
+            }
+
+            .project-content button {
+                position: static
+            }
+        }
+
+        @media(max-width:800px) {
+            .contact {
+                flex-direction: column
+            }
+
+            .contact-title {
+                font-size: 50px;
+                text-align: center;
+                width: 100%
+            }
+
+            .contact-content {
+                margin-top: 2rem;
+                width: 100%
+            }
+
+            .contact-content>div {
+                padding: 10px 5px
+            }
+
+            .contact-content>div>a {
+                font-size: 15px;
+                text-align: center;
+                display: block
+            }
+
+            .contact-content>div>a>svg {
+                margin-right: 10px
+            }
+        }
+
+        @media(max-width:1000px) {
+            .projects {
+                flex-flow: row wrap;
+                justify-content: center
+            }
+        }
+    </style>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"> -->
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <a href="/" title="Kartal Yunus Emre says Welcome">KY<span class="color-1">E</span></a>
+        </div>
+        <div class="links">
+            <a href="#work" role="link">WORK</a>
+            <a href="#contact" role="link">CONTACT</a>
+        </div>
+        <div class="icons">
+            <a href="https://github.com/KartalY-E" title="Github" role="link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg>
+            </a>
+            <a href="https://linkedin.com/in/yunus-emre-kartal-31979b199" title="LinkedIn" role="link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path
+                        d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
+                </svg>
+                <a href="{{ url_for('static', filename='documents/Yunus-Emre-Kartal-CV.pdf') }}" download
+                    title="Download my CV">
+                    <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"
+                        clip-rule="evenodd">
+                        <path
+                            d="M3 24h19v-23h-1v22h-18v1zm17-24h-18v22h18v-22zm-1 1h-16v20h16v-20zm-2 16h-12v1h12v-1zm0-3h-12v1h12v-1zm0-3h-12v1h12v-1zm-7.348-3.863l.948.3c-.145.529-.387.922-.725 1.178-.338.257-.767.385-1.287.385-.643 0-1.171-.22-1.585-.659-.414-.439-.621-1.04-.621-1.802 0-.806.208-1.432.624-1.878.416-.446.963-.669 1.642-.669.592 0 1.073.175 1.443.525.221.207.386.505.496.892l-.968.231c-.057-.251-.177-.449-.358-.594-.182-.146-.403-.218-.663-.218-.359 0-.65.129-.874.386-.223.258-.335.675-.335 1.252 0 .613.11 1.049.331 1.308.22.26.506.39.858.39.26 0 .484-.082.671-.248.187-.165.322-.425.403-.779zm3.023 1.78l-1.731-4.842h1.06l1.226 3.584 1.186-3.584h1.037l-1.734 4.842h-1.044z" />
+                    </svg>
+                </a>
+        </div>
+    </nav>
+    <main class="fade-in">
+        <section class="basics">
+            <div>
+                <h1>
+                    Hi,I'm Kartal Yunus <span class="color-2">EMRE</span>,<br>I'm a <span class="color-3">Full Stack
+                        Developer</span>.
+                </h1>
+                <p>
+                    During my bachelor <a href="https://www.kdg.be/multimedia-creative-technologies"><strong>Multimedia
+                            & Communication technology</strong></a> I learned Front & Backend development,with a touch
+                    of UX & UI.
+                    Right now I'm studing to get my AWS Certified Solutions Architect - Associate.
+                </p>
+                <a href="#work">
+                    <button class="button-link">
+                        MY WORK
+                    </button>
+                </a>
+                <a href="#contact">
+                    <button class="button-link">
+                        CONTACT MY
+                    </button>
+                </a>
+            </div>
+            <amp-img src="{{ url_for('static', filename='images/profile.svg') }}" alt="Profile image" width="450"
+                height="350"></amp-img>
+
+        </section>
+        <section class="certification">
+            <div data-iframe-width="270" data-iframe-height="270"
+                data-share-badge-id="867003e3-f31b-4dbe-8447-2531f3245398"
+                data-share-badge-host="https://www.credly.com"></div>
+            <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+        </section>
+        <section class="work" id="work">
+            <h2 class="work-title">
+                MY WORK
+            </h2>
+            <div class="projects">
+                <div class="project" role="article">
+                    <div class="project-content">
+                        <div class="project-title">
+                            Laravel & Vue - Food recipes
+                        </div>
+                        <p class="project-text">
+                            This is small project showing meals from around the world.
+                            Made with <strong>Laravel & Vue.js</strong> where I file my database with the data I get
+                            from and api (<a href="https://www.themealdb.com/api.php"
+                                class="external-link">TheMealDB</a>).
+                        </p>
+                        <p class="project-icons">
+                            <img src="{{ url_for('static', filename='images/laravel.svg') }}" alt="Laravel icon"
+                                title="Laravel">
+                            <img src="{{ url_for('static', filename='images/vuejs.svg') }}" alt="Vue.js icon"
+                                title="Vue.js">
+                        </p>
+                        <a href="https://github.com/KartalY-E/foody-recipes#readme">
+                            <button class="button-link" role="link">
+                                Github Repo
+                            </button>
+                        </a>
+                    </div>
+                    <img src="{{ url_for('static', filename='images/foody-recipes.jpg') }}"
+                        alt="Image of food-recipes home page">
+                </div>
+                <div class="project" role="article">
+                    <div class="project-content">
+                        <div class="project-title">
+                            Symfony 5 - Real-estate
+                        </div>
+                        <p class="project-text">
+                            Small real-estate website. Where users can add there property for sale/rent.
+                            Made with <strong>Symfony</strong>.
+                        </p>
+                        <p class="project-icons">
+                            <img src="{{ url_for('static', filename='images/symfony.svg') }}" alt="Symfony icon"
+                                title="Symfony">
+                            <img src="{{ url_for('static', filename='images/twig.png') }}" alt="Twig icon" title="Twig">
+                        </p>
+                        <a href="https://github.com/KartalY-E/immoweb#readme" class="github-link">
+                            <button class="button-link" role="link">
+                                Github Repo
+                            </button>
+                        </a>
+                    </div>
+                    <img src="{{ url_for('static', filename='images/properties-page.png') }}"
+                        alt="Image of properties page">
+                </div>
+                <div class="project" role="article">
+                    <div class="project-content">
+                        <div class="project-title">
+                            Laravel - Address API
+                        </div>
+                        <p class="project-text">
+                            Small api with fake addresses and a random user assign to it.
+                            Made with <strong>Laravel</strong>
+                            <br>
+                        </p>
+                        <p class="project-icons">
+                            <img src="{{ url_for('static', filename='images/laravel.svg') }}" alt="Laravel icon"
+                                title="Laravel">
+                        </p>
+                        <a href="https://github.com/KartalY-E/address-api#readme" class="github-link">
+                            <button class="button-link" role="link">
+                                Github Repo
+                            </button>
+                        </a>
+                    </div>
+                    <img src="{{ url_for('static', filename='images/api-data.jpg') }}" alt="API data example">
+                </div>
+                <div class="project" role="article">
+                    <div class="project-content">
+                        <div class="project-title">
+                            React - Movies & Series explorer
+                        </div>
+                        <p class="project-text">
+                            Movies & series website using <a href="https://www.themoviedb.org/"
+                                class="external-link">TheMovieDB</a> api, where we showcases the top best rated
+                            series/movies of all time.
+                            We have the trending items on the homepage together with a TV serie showcase. The detaild
+                            page of a movie or serie shows a small description, the rating and the genres.
+                        </p>
+                        <p class="project-icons">
+                            <img src="{{ url_for('static', filename='images/react.svg') }}" alt="React js icon"
+                                title="React.js">
+                            <a href="https://www.themoviedb.org/">
+                                <img src="{{ url_for('static', filename='images/tmdb.svg') }}" alt="themoviedb.org icon"
+                                    title="themoviedb.org">
+                            </a>
+                        </p>
+                        <a href="https://github.com/KartalY-E/react-movies#readme" class="github-link">
+                            <button class="button-link" role="link">
+                                Github Repo
+                            </button>
+                        </a>
+                    </div>
+                    <img src="{{ url_for('static', filename='images/react-movies-home.png') }}"
+                        alt="React movie & series app">
+                </div>
+            </div>
+        </section>
+        <section class="contact" id="contact">
+            <div class="contact-title">
+                CONTACT<br>
+                MY<span class="color-1">@</span>
+            </div>
+            <div class="contact-content">
+                <div>
+                    <a href="mailto:yunus.kartal89@gmail.com" aria-label="send email" role="link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path
+                                d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z" />
+                        </svg>
+                        yunus.kartal89@gmail.com
+                    </a>
+                </div>
+                <div>
+                    <a href="https://linkedin.com/in/yunus-emre-kartal-31979b199" role="link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path
+                                d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
+                        </svg>
+                        Kartal Yunus Emre
+                    </a>
+                </div>
+                <div>
+                    <a href="https://github.com/KartalY-E" role="link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                        Github.com/KartalY-E
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <button id="btnScrollToTop">UP</button>
+    <script>
+        const btnScrollToTop = document.querySelector('#btnScrollToTop');
+
+        window.addEventListener("scroll", () => {
+            if (window.pageYOffset > 100) {
+                btnScrollToTop.classList.add("btn-active");
+            } else {
+                btnScrollToTop.classList.remove("btn-active");
+            }
+        })
+
+        btnScrollToTop.addEventListener('click', function () {
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: "smooth"
+            })
+        });
+    </script>
+</body>
+
+</html>
