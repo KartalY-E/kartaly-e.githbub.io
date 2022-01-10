@@ -142,6 +142,7 @@
         nav {
             display: flex;
             justify-content: space-between;
+            align-items: center;
             margin: 3rem
         }
 
@@ -369,6 +370,15 @@
             .project-content {
                 margin: 0
             }
+
+            nav {
+                margin: 2rem .8rem;
+                font-size: small
+            }
+
+            nav .icons a:nth-child(3) {
+                margin-right: 0
+            }
         }
 
         @media(max-width:750px) {
@@ -443,7 +453,7 @@
         }
     </style>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"> -->
+    <!-- <link rel="stylesheet" href="/src/css/main.css"> -->
 </head>
 
 <body>
@@ -479,7 +489,6 @@
     </nav>
     <main class="fade-in">
         <section id="error">
-
             <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" width="860.13137" height="571.14799"
                 viewBox="0 0 860.13137 571.14799" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <path

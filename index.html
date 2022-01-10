@@ -142,6 +142,7 @@
         nav {
             display: flex;
             justify-content: space-between;
+            align-items: center;
             margin: 3rem
         }
 
@@ -369,6 +370,15 @@
             .project-content {
                 margin: 0
             }
+
+            nav {
+                margin: 2rem .8rem;
+                font-size: small
+            }
+
+            nav .icons a:nth-child(3) {
+                margin-right: 0
+            }
         }
 
         @media(max-width:750px) {
@@ -443,7 +453,7 @@
         }
     </style>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <!-- <link rel="stylesheet" href="/src/css/main.css"> -->
+    <!-- <link rel="stylesheet" href="/src/css/main.css">  -->
 </head>
 
 <body>
@@ -645,27 +655,8 @@
             </div>
         </section>
     </main>
-
     <button id="btnScrollToTop">UP</button>
-    <script>
-        const btnScrollToTop = document.querySelector('#btnScrollToTop');
-
-        window.addEventListener("scroll", () => {
-            if (window.pageYOffset > 100) {
-                btnScrollToTop.classList.add("btn-active");
-            } else {
-                btnScrollToTop.classList.remove("btn-active");
-            }
-        })
-
-        btnScrollToTop.addEventListener('click', function () {
-            window.scrollTo({
-                top: 0,
-                left: 0,
-                behavior: "smooth"
-            })
-        });
-    </script>
+    <script src="/src/js/up.js"></script>
 </body>
 
 </html>
