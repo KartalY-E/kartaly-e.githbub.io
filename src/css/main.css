@@ -11,7 +11,7 @@ body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
     border-bottom: 5px solid #2c3fef;
-    min-height: calc(100vh - 5px)
+    min-height: calc(100vh - 5px);
 }
 
 svg:hover {
@@ -319,6 +319,24 @@ h2 {
     height: 24px;
     width: 24px;
     margin-right: 20px
+}
+
+/* CONSTRUCTION */
+.construction {
+    width: 800px;
+    align-self: center;
+    margin: 0 auto;
+}
+
+.construction>h2,
+.construction>img {
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.construction>img {
+    max-width: 700px;
+    max-height: 500px;
 }
 
 #error {
